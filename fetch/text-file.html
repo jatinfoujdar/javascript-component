@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Fetch a Poem</h1>
+    <div id="poem"></div>
+<script>
+    console.log('about to fetch a poem');
+
+    fetch('poem.txt').then(response =>{
+        console.log(response);
+        return response.text();
+    }).then(ll =>{
+         console.log(ll);
+         document.getElementById('poem').innerHTML = poem;
+        
+         console.log('yayyyyy!!!!!!')
+      
+    }).catch(error=>{
+        console.log('error!!!!');
+        console.error(error);
+    })
+</script>
+</body>
+</html>
+
+<!-- text file.(poem)
+Invitation to Love
+Paul Laurence Dunbar, 1872 - 1906
+
+ Come when the nights are bright with stars
+   Or when the moon is mellow;
+Come when the sun his golden bars
+   Drops on the hay-field yellow.
+Come in the twilight soft and gray,
+Come in the night or come in the day,
+Come, O love, whene’er you may,
+   And you are welcome, welcome.
+
+You are sweet, O Love, dear Love,
+You are soft as the nesting dove.
+Come to my heart and bring it rest
+As the bird flies home to its welcome nest.
+
+Come when my heart is full of grief
+   Or when my heart is merry;
+Come with the falling of the leaf
+   Or with the redd’ning cherry.
+Come when the year’s first blossom blows,
+Come when the summer gleams and glows,
+Come with the winter’s drifting snows,
+   And you are welcome, welcome. -->
